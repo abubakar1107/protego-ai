@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ChevronRight, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
@@ -35,11 +35,11 @@ const Hero: React.FC = () => {
             Join the Waitlist
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </button>
-          
-          <button className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/10 text-white font-medium text-sm uppercase tracking-wider rounded hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
-            <Play size={16} fill="currentColor" />
-            Watch Simulation
-          </button>
+        </div>
+        
+        <div className="mt-6 flex items-center justify-center gap-2 text-protego-muted/60 text-sm">
+           <div className="w-1.5 h-1.5 rounded-full bg-protego-cyan"></div>
+           Platform currently in Development
         </div>
 
         {/* Stats strip */}
@@ -47,8 +47,8 @@ const Hero: React.FC = () => {
           {[
             { label: 'Market Value', value: '$400B+' },
             { label: 'Civil Lawsuits', value: '97% Settle' },
-            { label: 'Technology', value: 'MCP Server' },
             { label: 'Architecture', value: 'Adversarial' },
+            { label: 'Security', value: 'Atomic Level' },
           ].map((stat, i) => (
             <div key={i} className="flex flex-col items-center md:items-start">
               <span className="text-2xl md:text-3xl font-bold text-white font-mono">{stat.value}</span>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Edit3, Crosshair, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Edit3, Crosshair, ShieldCheck } from 'lucide-react';
 
 const CoreProcess: React.FC = () => {
   return (
@@ -8,10 +8,11 @@ const CoreProcess: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-protego-cyan font-mono text-sm uppercase tracking-widest mb-4">The Solution</h2>
           <h3 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            The Adversarial Simulation Loop
+            Two Rival Agent Teams
           </h3>
-          <p className="text-protego-muted max-w-2xl mx-auto">
-            We don't just generate. We simulate the courtroom.
+          <p className="text-protego-muted max-w-3xl mx-auto text-lg">
+            We deploy two teams of specialized AI Agents pitching against each other in a continuous 
+            <span className="text-white font-semibold ml-1">Draft, Attack, Fortify</span> loop.
           </p>
         </div>
 
@@ -24,19 +25,19 @@ const CoreProcess: React.FC = () => {
               step: "01",
               title: "Draft",
               icon: <Edit3 size={32} />,
-              desc: "Our AI writes the initial legal argument, analyzing precedents and crafting compelling narratives based on case facts."
+              desc: "The Proponent Agent Team drafts the initial argument. They access jurisdiction-specific databases to craft narratives backed by case law."
             },
             {
               step: "02",
               title: "Attack",
               icon: <Crosshair size={32} />,
-              desc: "A second 'Opposing Counsel' AI aggressively tries to destroy the argument—finding loopholes, missing facts, and weak logic."
+              desc: "A rival Opposing Agent Team aggressively attacks the document—finding loopholes, missing facts, and logical fallacies just like a real opponent."
             },
             {
               step: "03",
               title: "Fortify",
               icon: <ShieldCheck size={32} />,
-              desc: "The system automatically fixes the document based on the attack, strengthening weak points and closing loopholes."
+              desc: "The system automatically fortifies the document based on the adversarial simulation, resulting in an iron-clad, bullet-proof filing."
             }
           ].map((item, i) => (
             <div key={i} className="relative z-10 flex flex-col items-center text-center">
