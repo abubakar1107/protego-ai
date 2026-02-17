@@ -1,5 +1,5 @@
 import React from 'react';
-import { Database, GitMerge, Lock, Server, Scale, Users } from 'lucide-react';
+import { GitMerge, Lock, Server, Scale, Users } from 'lucide-react';
 
 const Features: React.FC = () => {
   return (
