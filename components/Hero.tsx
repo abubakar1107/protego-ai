@@ -1,7 +1,12 @@
+
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  openModal: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ openModal }) => {
   return (
     <section className="relative pt-40 pb-20 px-6 min-h-[90vh] flex flex-col justify-center items-center text-center overflow-hidden">
       
@@ -31,7 +36,10 @@ const Hero: React.FC = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-          <button className="w-full sm:w-auto px-8 py-4 bg-protego-cyan text-black font-bold text-sm uppercase tracking-wider rounded hover:bg-white transition-colors flex items-center justify-center gap-2 group">
+          <button 
+            onClick={openModal}
+            className="w-full sm:w-auto px-8 py-4 bg-protego-cyan text-black font-bold text-sm uppercase tracking-wider rounded hover:bg-white transition-colors flex items-center justify-center gap-2 group"
+          >
             Join the Waitlist
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </button>
@@ -45,12 +53,12 @@ const Hero: React.FC = () => {
         {/* Stats strip */}
         <div className="mt-20 pt-8 border-t border-white/5 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 w-full max-w-4xl">
           {[
-            { label: 'Market Value', value: '$400B+' },
+            { label: 'Industry Opportunity', value: '$400B+' },
             { label: 'Civil Lawsuits', value: '97% Settle' },
             { label: 'Architecture', value: 'Adversarial' },
             { label: 'Security', value: 'Atomic Level' },
           ].map((stat, i) => (
-            <div key={i} className="flex flex-col items-center md:items-start">
+            <div key={i} className="flex flex-col items-start text-left">
               <span className="text-2xl md:text-3xl font-bold text-white font-mono">{stat.value}</span>
               <span className="text-xs text-protego-muted uppercase tracking-wider mt-1">{stat.label}</span>
             </div>
