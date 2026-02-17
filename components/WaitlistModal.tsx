@@ -176,7 +176,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
               {status === 'error' && (
                 <div className="flex items-start gap-2 text-red-400 bg-red-400/10 p-3 rounded-lg border border-red-400/20 animate-in fade-in slide-in-from-top-2">
                   <AlertCircle size={16} className="mt-0.5 shrink-0" />
-                  <p className="text-xs font-medium text-left break-words">
+                  <p className="text-xs font-medium text-left break-words max-h-32 overflow-y-auto">
                     {errorMessage}
                   </p>
                 </div>

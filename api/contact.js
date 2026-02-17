@@ -86,6 +86,12 @@ export default async function handler(req, res) {
     if (!putResponse.ok) {
       const errText = await putResponse.text();
       console.error("GitHub PUT Error:", putResponse.status, errText);
+
+      // SPECIFIC ERROR HANDLING FOR PERMISSIONS
+      if (putResponse.status === 403 && errText.includes("Resource not accessible by personal access token")) {
+         throw new Error("GitHub Permission Denied: Your token is missing 'Contents' Write access. Go to GitHub -> Settings -> Developer Settings -> Personal Access Tokens -> Your Token -> Repository Permissions -> Contents -> Change to 'Read and Write'.");
+      }
+
       throw new Error(`GitHub Save Error (${putResponse.status}): ${errText}`);
     }
 
