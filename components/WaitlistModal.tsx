@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { X, Send, Shield, CheckCircle2, Loader2 } from 'lucide-react';
+import { X, Send, Shield, CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
 
 interface WaitlistModalProps {
   isOpen: boolean;
@@ -9,6 +8,7 @@ interface WaitlistModalProps {
 
 const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,9 +21,9 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
+    setErrorMessage('');
     
     try {
-      // POST request to our local backend server
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -32,18 +32,32 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
         body: JSON.stringify(formData)
       });
 
-      const data = await response.json();
+      // Handle the response
+      const contentType = response.headers.get("content-type");
+      let data;
+      
+      if (contentType && contentType.includes("application/json")) {
+        data = await response.json();
+      } else {
+        // If Vercel crashes (e.g. 504 Timeout or 500 Error page), it returns HTML/text, not JSON.
+        const text = await response.text();
+        console.error("Non-JSON response:", text);
+        throw new Error(response.status === 500 ? "Internal Server Error (Check Vercel Logs)" : `Server returned ${response.status}`);
+      }
 
       if (response.ok && data.success) {
         setStatus('success');
         setFormData({ name: '', email: '', company: '', message: '' });
       } else {
-        console.error("Server Error:", data);
+        console.error("API Error:", data);
         setStatus('error');
+        setErrorMessage(data.message || 'Submission failed. Please check your connection.');
       }
-    } catch (err) {
-      console.error('Submission error:', err);
+    } catch (err: any) {
+      console.error('Submission Exception:', err);
       setStatus('error');
+      // Show the actual error message to help debugging
+      setErrorMessage(err.message || 'Network Error. Please try again.');
     }
   };
 
@@ -160,9 +174,12 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
               </div>
 
               {status === 'error' && (
-                <p className="text-red-400 text-xs font-medium text-center">
-                  Server Error: Make sure "node server.js" is running.
-                </p>
+                <div className="flex items-start gap-2 text-red-400 bg-red-400/10 p-3 rounded-lg border border-red-400/20 animate-in fade-in slide-in-from-top-2">
+                  <AlertCircle size={16} className="mt-0.5 shrink-0" />
+                  <p className="text-xs font-medium text-left break-words">
+                    {errorMessage}
+                  </p>
+                </div>
               )}
 
               <button 
