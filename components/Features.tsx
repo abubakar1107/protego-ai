@@ -1,81 +1,84 @@
 import React from 'react';
-import { GitMerge, Lock, Server, Scale, Users } from 'lucide-react';
+import { Route, Lock, Landmark, Scale, Users } from 'lucide-react';
 
 const Features: React.FC = () => {
   return (
-    <section id="features" className="px-6 py-20">
+    <section id="features" className="px-6 py-24">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">System Architecture</h2>
-        
+        <div className="mb-12">
+          <h2 className="text-seer-indigo font-mono text-sm uppercase tracking-widest mb-4">Platform</h2>
+          <h3 className="text-3xl md:text-4xl font-serif text-seer-text">Built for Accuracy and Trust</h3>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          
+
           {/* Feature 1: Specialized Agents */}
-          <div className="lg:col-span-2 glass-panel p-8 rounded-2xl border border-white/10 hover:border-protego-cyan/30 transition-all">
+          <div className="lg:col-span-2 bg-white p-8 rounded-2xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-indigo/30 transition-all">
             <div className="flex items-start justify-between mb-8">
-              <div className="p-3 bg-blue-500/10 rounded-lg text-blue-400">
+              <div className="p-3 bg-indigo-50 rounded-lg text-seer-indigo">
                 <Users size={24} />
               </div>
-              <span className="text-xs font-mono text-white/30 border border-white/10 px-2 py-1 rounded">MULTI-AGENT SYSTEM</span>
+              <span className="text-xs font-mono text-seer-muted border border-seer-border px-2 py-1 rounded">MULTI-AGENT</span>
             </div>
-            <h3 className="text-xl font-bold text-white mb-3">Two Teams of Specialized Agents</h3>
-            <p className="text-protego-muted">
-              We construct distinct teams of Agents for each side of the lawsuit. These agents are autonomously connected to specialized tools, legal databases, and knowledge bases, allowing them to pitch against each other to expose every weakness.
+            <h3 className="text-lg font-semibold tracking-tight text-seer-text mb-3">Six Specialized Agents</h3>
+            <p className="text-seer-muted leading-relaxed">
+              Each agent has a defined role — Lead Counsel, Argument Specialist, Researcher, Discovery Analyst, Fact Extractor, and Judge. No single model handles everything; specialists collaborate to expose every weakness.
             </p>
           </div>
 
-          {/* Feature 2: MCP */}
-          <div className="glass-panel p-8 rounded-2xl border border-white/10 hover:border-protego-cyan/30 transition-all">
+          {/* Feature 2: Jurisdiction Tools */}
+          <div className="bg-white p-8 rounded-2xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-indigo/30 transition-all">
             <div className="flex items-start justify-between mb-8">
-              <div className="p-3 bg-purple-500/10 rounded-lg text-purple-400">
-                <Server size={24} />
+              <div className="p-3 bg-purple-50 rounded-lg text-purple-600">
+                <Landmark size={24} />
               </div>
-              <span className="text-xs font-mono text-white/30 border border-white/10 px-2 py-1 rounded">PROTOCOL</span>
+              <span className="text-xs font-mono text-seer-muted border border-seer-border px-2 py-1 rounded">TOOLS</span>
             </div>
-            <h3 className="text-xl font-bold text-white mb-3">Model Context Protocol (MCP)</h3>
-            <p className="text-protego-muted">
-              Centralized server to host all tools, database connections, and system prompts for standardized agent communication.
+            <h3 className="text-lg font-semibold tracking-tight text-seer-text mb-3">Jurisdiction-Specific Tools</h3>
+            <p className="text-seer-muted leading-relaxed">
+              Agents connect to court-specific databases, case law libraries, and filing standards through a centralized protocol layer.
             </p>
           </div>
 
-           {/* Feature 3: Atomic Security */}
-           <div className="glass-panel p-8 rounded-2xl border border-white/10 hover:border-protego-cyan/30 transition-all">
+           {/* Feature 3: Security */}
+           <div className="bg-white p-8 rounded-2xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-indigo/30 transition-all">
             <div className="flex items-start justify-between mb-8">
-              <div className="p-3 bg-red-500/10 rounded-lg text-red-400">
+              <div className="p-3 bg-red-50 rounded-lg text-red-600">
                 <Lock size={24} />
               </div>
-              <span className="text-xs font-mono text-white/30 border border-white/10 px-2 py-1 rounded">SECURITY</span>
+              <span className="text-xs font-mono text-seer-muted border border-seer-border px-2 py-1 rounded">SECURITY</span>
             </div>
-            <h3 className="text-xl font-bold text-white mb-3">Atomic Level Security</h3>
-            <p className="text-protego-muted">
-              Authentication and Authorization are inbuilt into the atomic level of every agent and tool interaction, ensuring enterprise-grade data sovereignty.
+            <h3 className="text-lg font-semibold tracking-tight text-seer-text mb-3">Enterprise-Grade Security</h3>
+            <p className="text-seer-muted leading-relaxed">
+              Attorney-client privilege protected at every layer. Authentication and authorization built into every agent and tool interaction.
             </p>
           </div>
 
-           {/* Feature 4: Graph Workflows */}
-           <div className="glass-panel p-8 rounded-2xl border border-white/10 hover:border-protego-cyan/30 transition-all">
+           {/* Feature 4: Dynamic Workflows */}
+           <div className="bg-white p-8 rounded-2xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-indigo/30 transition-all">
             <div className="flex items-start justify-between mb-8">
-              <div className="p-3 bg-green-500/10 rounded-lg text-green-400">
-                <GitMerge size={24} />
+              <div className="p-3 bg-green-50 rounded-lg text-green-600">
+                <Route size={24} />
               </div>
-              <span className="text-xs font-mono text-white/30 border border-white/10 px-2 py-1 rounded">LOGIC</span>
+              <span className="text-xs font-mono text-seer-muted border border-seer-border px-2 py-1 rounded">LOGIC</span>
             </div>
-            <h3 className="text-xl font-bold text-white mb-3">Graph-Based Workflows</h3>
-            <p className="text-protego-muted">
-              Enables the iterative "Draft → Critique → Refine" cycle that forces the agent teams to iterate until the document is iron clad.
+            <h3 className="text-lg font-semibold tracking-tight text-seer-text mb-3">Dynamic Workflows</h3>
+            <p className="text-seer-muted leading-relaxed">
+              Agents don't follow a fixed script. The system dynamically routes between drafting, critiquing, and refining based on each document's needs.
             </p>
           </div>
 
-           {/* Feature 5: Judge Agents */}
-           <div className="glass-panel p-8 rounded-2xl border border-white/10 hover:border-protego-cyan/30 transition-all">
+           {/* Feature 5: Neutral Adjudication */}
+           <div className="bg-white p-8 rounded-2xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-indigo/30 transition-all">
             <div className="flex items-start justify-between mb-8">
-              <div className="p-3 bg-orange-500/10 rounded-lg text-orange-400">
+              <div className="p-3 bg-amber-50 rounded-lg text-amber-600">
                 <Scale size={24} />
               </div>
-              <span className="text-xs font-mono text-white/30 border border-white/10 px-2 py-1 rounded">SIMULATION</span>
+              <span className="text-xs font-mono text-seer-muted border border-seer-border px-2 py-1 rounded">ADJUDICATION</span>
             </div>
-            <h3 className="text-xl font-bold text-white mb-3">Judge Agents</h3>
-            <p className="text-protego-muted">
-              A final layer of "Judge Agents" simulates judicial rulings to predict outcomes based on the strengthened arguments.
+            <h3 className="text-lg font-semibold tracking-tight text-seer-text mb-3">Neutral Adjudication</h3>
+            <p className="text-seer-muted leading-relaxed">
+              A Judge agent evaluates arguments from both sides without bias, determining when documents meet the standard for filing.
             </p>
           </div>
         </div>

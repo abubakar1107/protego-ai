@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Menu, X, Shield, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -11,9 +11,10 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, openModal }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'The Pain', href: '#pain' },
-    { name: 'Solution', href: '#solution' },
-    { name: 'Features', href: '#features' },
+    { name: 'Problem', href: '#pain' },
+    { name: 'How It Works', href: '#solution' },
+    { name: 'Simulation', href: '#simulation' },
+    { name: 'Platform', href: '#features' },
     { name: 'Why Us', href: '#comparison' },
   ];
 
@@ -21,17 +22,14 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, openModal }) => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
         isScrolled
-          ? 'bg-protego-dark/80 backdrop-blur-md border-protego-border py-4'
+          ? 'bg-white/90 backdrop-blur-md border-seer-border shadow-sm py-4'
           : 'bg-transparent border-transparent py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded bg-protego-cyan text-black flex items-center justify-center">
-            <Shield size={18} strokeWidth={3} />
-          </div>
-          <span className="text-xl font-bold tracking-tight text-white group-hover:text-protego-cyan transition-colors">
-            Protego-AI
+        <a href="#" className="flex items-center gap-1 group">
+          <span className="text-2xl font-serif tracking-wide text-seer-text group-hover:text-seer-indigo transition-colors">
+            SEER
           </span>
         </a>
 
@@ -41,23 +39,23 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, openModal }) => {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-protego-muted hover:text-white transition-colors"
+              className="text-sm font-medium text-seer-muted hover:text-seer-text transition-colors"
             >
               {link.name}
             </a>
           ))}
           <button
             onClick={openModal}
-            className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-4 py-2 rounded text-sm font-medium transition-all group"
+            className="flex items-center gap-2 bg-seer-indigo hover:bg-indigo-700 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors group"
           >
             Request Access
-            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
           </button>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-seer-text"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X /> : <Menu />}
@@ -66,12 +64,12 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, openModal }) => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-protego-dark border-b border-protego-border p-6 md:hidden flex flex-col gap-4 shadow-2xl">
+        <div className="absolute top-full left-0 right-0 bg-white border-b border-seer-border p-6 md:hidden flex flex-col gap-4 shadow-lg">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-base font-medium text-protego-muted hover:text-white"
+              className="text-base font-medium text-seer-muted hover:text-seer-text"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
@@ -82,7 +80,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, openModal }) => {
               setIsMobileMenuOpen(false);
               openModal();
             }}
-            className="flex items-center justify-center gap-2 bg-protego-cyan text-black px-4 py-3 rounded font-bold mt-2 w-full text-center"
+            className="flex items-center justify-center gap-2 bg-seer-indigo text-white px-4 py-3 rounded-lg font-semibold mt-2 w-full text-center"
           >
             Request Access
           </button>

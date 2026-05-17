@@ -8,59 +8,39 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ openModal }) => {
   return (
-    <section className="relative pt-40 pb-20 px-6 min-h-[90vh] flex flex-col justify-center items-center text-center overflow-hidden">
-      
-      {/* Decorative Background Elements */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-protego-cyan/10 rounded-full animate-[spin_60s_linear_infinite]"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] border border-protego-cyan/20 rounded-full animate-[spin_40s_linear_infinite_reverse]"></div>
-      
-      <div className="z-10 max-w-5xl mx-auto flex flex-col items-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-protego-cyan/10 border border-protego-cyan/20 text-protego-cyan text-xs font-mono font-medium mb-8">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-protego-cyan opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-protego-cyan"></span>
-          </span>
-          SYSTEMS DESIGN PHASE ACTIVE
-        </div>
-
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white leading-[1.1] mb-8">
-          Reinforcing Litigation with <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-protego-cyan to-blue-600 text-glow">
-            Agentic AI Workflows
-          </span>
+    <section className="relative pt-40 pb-20 px-6 min-h-[90vh] flex flex-col justify-center items-center text-center">
+      <div className="max-w-5xl mx-auto flex flex-col items-center">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight text-seer-text leading-[1.1] mb-8">
+          Litigation Documents,{' '}
+          <span className="italic text-seer-indigo">Battle-Tested</span>{' '}
+          Before Filing
         </h1>
 
-        <p className="text-lg md:text-xl text-protego-muted max-w-2xl mb-12 leading-relaxed">
-          The first Adversarial AI simulation system for litigators. 
-          Don't just draft documents. <span className="text-white font-semibold">Draft. Attack. Fortify.</span>
+        <p className="text-lg md:text-xl text-seer-muted max-w-2xl mb-12 leading-relaxed">
+          SEER autonomously drafts court-ready legal documents and stress-tests them through adversarial simulation — keeping you in full control at every step.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-          <button 
+          <button
             onClick={openModal}
-            className="w-full sm:w-auto px-8 py-4 bg-protego-cyan text-black font-bold text-sm uppercase tracking-wider rounded hover:bg-white transition-colors flex items-center justify-center gap-2 group"
+            className="w-full sm:w-auto px-8 py-4 bg-seer-indigo hover:bg-indigo-700 text-white font-semibold text-sm tracking-wide rounded-lg transition-colors flex items-center justify-center gap-2 group"
           >
-            Join the Waitlist
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            Request Early Access
+            <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
           </button>
-        </div>
-        
-        <div className="mt-6 flex items-center justify-center gap-2 text-protego-muted/60 text-sm">
-           <div className="w-1.5 h-1.5 rounded-full bg-protego-cyan"></div>
-           Platform currently in Development
         </div>
 
         {/* Stats strip */}
-        <div className="mt-20 pt-8 border-t border-white/5 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 w-full max-w-4xl">
+        <div className="mt-20 pt-8 border-t border-seer-border grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 w-full max-w-4xl">
           {[
-            { label: 'Industry Opportunity', value: '$400B+' },
-            { label: 'Civil Lawsuits', value: '97% Settle' },
-            { label: 'Architecture', value: 'Adversarial' },
-            { label: 'Security', value: 'Atomic Level' },
+            { label: 'Agents and counting', value: '6+' },
+            { label: 'Federal Courts', value: '23+' },
+            { label: 'State Courts', value: '40+' },
+            { label: 'Document Types and growing', value: '12+' },
           ].map((stat, i) => (
             <div key={i} className="flex flex-col items-start text-left">
-              <span className="text-2xl md:text-3xl font-bold text-white font-mono">{stat.value}</span>
-              <span className="text-xs text-protego-muted uppercase tracking-wider mt-1">{stat.label}</span>
+              <span className="text-3xl md:text-4xl font-serif text-seer-text">{stat.value}</span>
+              <span className="text-xs text-seer-muted uppercase tracking-wider mt-1 font-mono">{stat.label}</span>
             </div>
           ))}
         </div>

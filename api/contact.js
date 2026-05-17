@@ -1,7 +1,4 @@
-import { Buffer } from 'node:buffer';
-
 export default async function handler(req, res) {
-  // Ensure we are returning JSON, even in error cases
   res.setHeader('Content-Type', 'application/json');
 
   if (req.method !== 'POST') {
@@ -10,98 +7,68 @@ export default async function handler(req, res) {
 
   try {
     const { name, email, company, message } = req.body;
-    
-    const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-    const OWNER = process.env.GITHUB_REPO_OWNER;
-    const REPO = process.env.GITHUB_REPO_NAME;
-    const FILE_PATH = 'submissions.csv';
 
-    // Debugging: Check if env vars are loaded (Don't log the actual token!)
-    if (!GITHUB_TOKEN || !OWNER || !REPO) {
-      console.error("Missing Env Vars. Owner:", OWNER, "Repo:", REPO, "Token Set:", !!GITHUB_TOKEN);
-      return res.status(500).json({ 
-        success: false, 
-        message: 'Server Config Error: Missing GitHub Environment Variables. Check Vercel Settings.' 
+    const RESEND_API_KEY = process.env.RESEND_API_KEY;
+    if (!RESEND_API_KEY) {
+      console.error('Missing RESEND_API_KEY env var');
+      return res.status(500).json({
+        success: false,
+        message: 'Server Config Error: Missing Resend API Key.'
       });
     }
 
-    const timestamp = new Date().toISOString();
-    
-    // Helper to escape CSV fields
-    const safe = (str) => {
-      const s = String(str || '');
-      return `"${s.replace(/"/g, '""')}"`;
-    };
+    const timestamp = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
 
-    const newLine = `${safe(timestamp)},${safe(name)},${safe(email)},${safe(company)},${safe(message)}\n`;
-    const apiUrl = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE_PATH}`;
-
-    // 1. GET existing file
-    const getResponse = await fetch(apiUrl, {
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
       headers: {
-        'Authorization': `Bearer ${GITHUB_TOKEN}`,
-        'Accept': 'application/vnd.github.v3+json',
-        'User-Agent': 'Protego-App'
-      }
-    });
-
-    let sha = undefined;
-    let content = 'Timestamp,Name,Email,Company,Message\n'; 
-
-    if (getResponse.ok) {
-      const data = await getResponse.json();
-      sha = data.sha;
-      content = Buffer.from(data.content, 'base64').toString('utf-8');
-    } else if (getResponse.status !== 404) {
-      const errText = await getResponse.text();
-      // If we get a 403 or 401, it's usually a permission error
-      console.error("GitHub GET Error:", getResponse.status, errText);
-      throw new Error(`GitHub Error (${getResponse.status}): Check Token Permissions. ${errText}`);
-    }
-
-    // 2. Append new data
-    const updatedContent = content + newLine;
-    const updatedContentBase64 = Buffer.from(updatedContent).toString('base64');
-
-    // 3. PUT update
-    const putResponse = await fetch(apiUrl, {
-      method: 'PUT',
-      headers: {
-        'Authorization': `Bearer ${GITHUB_TOKEN}`,
-        'Accept': 'application/vnd.github.v3+json',
-        'User-Agent': 'Protego-App',
+        'Authorization': `Bearer ${RESEND_API_KEY}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        message: `New Lead: ${name}`,
-        content: updatedContentBase64,
-        sha: sha,
-        committer: {
-          name: "Protego AI Bot",
-          email: "bot@protego.ai"
-        }
+        from: 'SEER <onboarding@resend.dev>',
+        to: 'abubakarsiddiqpalli99@gmail.com',
+        subject: `New Early Access Request — ${name}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #4F46E5; margin-bottom: 24px;">New Early Access Request</h2>
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #E2E8F0; color: #475569; width: 120px;">Name</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #E2E8F0; color: #0F172A; font-weight: 500;">${name}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #E2E8F0; color: #475569;">Email</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #E2E8F0; color: #0F172A; font-weight: 500;">${email}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #E2E8F0; color: #475569;">Company</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #E2E8F0; color: #0F172A; font-weight: 500;">${company}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #E2E8F0; color: #475569;">Message</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #E2E8F0; color: #0F172A; font-weight: 500;">${message}</td>
+              </tr>
+            </table>
+            <p style="color: #94A3B8; font-size: 12px; margin-top: 24px;">Submitted on ${timestamp}</p>
+          </div>
+        `
       })
     });
 
-    if (!putResponse.ok) {
-      const errText = await putResponse.text();
-      console.error("GitHub PUT Error:", putResponse.status, errText);
-
-      // SPECIFIC ERROR HANDLING FOR PERMISSIONS
-      if (putResponse.status === 403 && errText.includes("Resource not accessible by personal access token")) {
-         throw new Error("GitHub Permission Denied: Your token is missing 'Contents' Write access. Go to GitHub -> Settings -> Developer Settings -> Personal Access Tokens -> Your Token -> Repository Permissions -> Contents -> Change to 'Read and Write'.");
-      }
-
-      throw new Error(`GitHub Save Error (${putResponse.status}): ${errText}`);
+    if (!response.ok) {
+      const errData = await response.json();
+      console.error('Resend Error:', response.status, errData);
+      throw new Error(errData.message || `Email send failed (${response.status})`);
     }
 
-    return res.status(200).json({ success: true, message: 'Saved to GitHub CSV' });
+    return res.status(200).json({ success: true, message: 'Email sent successfully' });
 
   } catch (error) {
     console.error('API Handler Error:', error);
-    return res.status(500).json({ 
-      success: false, 
-      message: error.message || 'Internal Server Error' 
+    return res.status(500).json({
+      success: false,
+      message: error.message || 'Internal Server Error'
     });
   }
 }
