@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Lock, Landmark, Scale, Users } from 'lucide-react';
+import { Route, Lock, Landmark, Scale, Swords } from 'lucide-react';
 
 const Features: React.FC = () => {
   return (
@@ -12,17 +12,17 @@ const Features: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-          {/* Feature 1: Specialized Agents */}
+          {/* Feature 1: Adversarial Methodology */}
           <div className="lg:col-span-2 bg-white p-8 rounded-2xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-indigo/30 transition-all">
             <div className="flex items-start justify-between mb-8">
               <div className="p-3 bg-indigo-50 rounded-lg text-seer-indigo">
-                <Users size={24} />
+                <Swords size={24} />
               </div>
-              <span className="text-xs font-mono text-seer-muted border border-seer-border px-2 py-1 rounded">MULTI-AGENT</span>
+              <span className="text-xs font-mono text-seer-muted border border-seer-border px-2 py-1 rounded">METHODOLOGY</span>
             </div>
-            <h3 className="text-lg font-semibold tracking-tight text-seer-text mb-3">Six Specialized Agents</h3>
+            <h3 className="text-lg font-semibold tracking-tight text-seer-text mb-3">Adversarial by Design</h3>
             <p className="text-seer-muted leading-relaxed">
-              Each agent has a defined role — Lead Counsel, Argument Specialist, Researcher, Discovery Analyst, Fact Extractor, and Judge. No single model handles everything; specialists collaborate to expose every weakness.
+              Documents aren't just reviewed — they're attacked. Two opposing teams stress-test every argument across multiple rounds, so your filings have already survived the toughest scrutiny before they reach a courtroom.
             </p>
           </div>
 

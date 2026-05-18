@@ -38,10 +38,10 @@ const HumanInTheLoop: React.FC = () => {
           <div className="sticky top-32">
             <h2 className="text-seer-indigo font-mono text-sm uppercase tracking-widest mb-4">Your Control</h2>
             <h3 className="text-3xl md:text-5xl font-serif text-seer-text mb-6">
-              You Direct. SEER Executes.
+              Always in Control. Never Out of the Loop.
             </h3>
             <p className="text-seer-muted text-lg leading-relaxed">
-              Attorneys stay in command throughout. Pause, intervene, or redirect at any point in the process. SEER is a tool in your hands — not a replacement.
+              SEER runs autonomously, but you can intervene at any moment. Pause the workflow, provide feedback, redirect strategy — your input feeds directly into the process in real time.
             </p>
           </div>
 

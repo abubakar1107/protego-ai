@@ -12,7 +12,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, openModal }) => {
 
   const navLinks = [
     { name: 'Problem', href: '#pain' },
-    { name: 'How It Works', href: '#solution' },
+    { name: 'Process', href: '#solution' },
     { name: 'Simulation', href: '#simulation' },
     { name: 'Platform', href: '#features' },
     { name: 'Why Us', href: '#comparison' },
@@ -31,6 +31,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, openModal }) => {
           <span className="text-2xl font-serif tracking-wide text-seer-text group-hover:text-seer-indigo transition-colors">
             SEER
           </span>
+          <span className="text-xs text-seer-muted ml-1.5 hidden sm:inline">by Seerlex</span>
         </a>
 
         {/* Desktop Nav */}
