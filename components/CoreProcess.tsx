@@ -7,7 +7,7 @@ const CoreProcess: React.FC = () => {
     <section id="solution" className="px-6 py-24 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <h2 className="text-seer-indigo font-mono text-sm uppercase tracking-widest mb-4">How It Works</h2>
+          <h2 className="text-seer-accent font-mono text-sm uppercase tracking-widest mb-4">How It Works</h2>
           <h3 className="text-3xl md:text-5xl font-serif text-seer-text mb-6">
             Your Case, Start to Finish
           </h3>
@@ -42,16 +42,16 @@ const CoreProcess: React.FC = () => {
           ].map((item, i) => (
             <div key={i} className="relative z-10 flex flex-col items-center text-center group">
               <div className="mb-6">
-                <span className="text-[10px] font-mono font-semibold text-seer-indigo uppercase tracking-[0.2em] bg-seer-indigo/5 border border-seer-indigo/15 px-4 py-1.5 rounded-md">
+                <span className="text-[10px] font-mono font-semibold text-seer-accent uppercase tracking-[0.2em] bg-seer-accent/5 border border-seer-accent/15 px-4 py-1.5 rounded-md">
                   STEP {item.step}
                 </span>
               </div>
 
-              <div className="w-24 h-24 rounded-2xl bg-seer-surface border border-seer-border group-hover:border-seer-indigo/40 flex items-center justify-center text-seer-indigo mb-8 shadow-sm group-hover:shadow-md transition-all duration-300">
+              <div className="w-24 h-24 rounded-2xl bg-seer-surface border border-seer-border group-hover:border-seer-accent/40 flex items-center justify-center text-seer-accent mb-8 shadow-sm group-hover:shadow-md transition-all duration-300">
                 {item.icon}
               </div>
 
-              <h4 className="text-xl font-semibold tracking-tight text-seer-text mb-4 group-hover:text-seer-indigo transition-colors">{item.title}</h4>
+              <h4 className="text-xl font-semibold tracking-tight text-seer-text mb-4 group-hover:text-seer-accent transition-colors">{item.title}</h4>
               <p className="text-seer-muted leading-relaxed px-4 text-sm md:text-base">
                 {item.desc}
               </p>

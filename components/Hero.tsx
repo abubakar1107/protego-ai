@@ -12,7 +12,7 @@ const Hero: React.FC<HeroProps> = ({ openModal }) => {
       <div className="max-w-5xl mx-auto flex flex-col items-center">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight text-seer-text leading-[1.1] mb-8">
           Litigation Documents,{' '}
-          <span className="italic text-seer-indigo">Battle-Tested</span>{' '}
+          <span className="italic text-seer-accent">Battle-Tested</span>{' '}
           Before Filing
         </h1>
 
@@ -23,7 +23,7 @@ const Hero: React.FC<HeroProps> = ({ openModal }) => {
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
           <button
             onClick={openModal}
-            className="w-full sm:w-auto px-8 py-4 bg-seer-indigo hover:bg-indigo-700 text-white font-semibold text-sm tracking-wide rounded-lg transition-colors flex items-center justify-center gap-2 group"
+            className="w-full sm:w-auto px-8 py-4 bg-seer-accent hover:bg-[#C4684E] text-white font-semibold text-sm tracking-wide rounded-lg transition-colors flex items-center justify-center gap-2 group"
           >
             Request Early Access
             <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />

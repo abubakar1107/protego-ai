@@ -8,7 +8,7 @@ const Comparison: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 lg:gap-8">
 
           <div className="lg:col-span-2 pr-0 lg:pr-12 mb-12 lg:mb-0">
-            <h2 className="text-seer-indigo font-mono text-sm uppercase tracking-widest mb-4">Why Us</h2>
+            <h2 className="text-seer-accent font-mono text-sm uppercase tracking-widest mb-4">Why Us</h2>
             <h3 className="text-3xl md:text-4xl font-serif text-seer-text mb-6">
               Everyone else generates. We simulate.
             </h3>
@@ -29,8 +29,8 @@ const Comparison: React.FC = () => {
                   <div className="text-xs text-seer-muted mt-1">(Harvey, EvenUp)</div>
                 </div>
                 <div className="p-6 text-center relative">
-                   <div className="absolute top-0 left-0 right-0 h-1 bg-seer-indigo"></div>
-                  <span className="text-lg font-semibold tracking-tight text-seer-indigo">SEER</span>
+                   <div className="absolute top-0 left-0 right-0 h-1 bg-seer-accent"></div>
+                  <span className="text-lg font-semibold tracking-tight text-seer-accent">SEER</span>
                   <div className="text-xs text-seer-muted mt-1">(Adversarial Simulation)</div>
                 </div>
               </div>
@@ -54,8 +54,8 @@ const Comparison: React.FC = () => {
                         {row.comp ? <Check size={20} className="text-green-600" /> : <X size={20} className="text-red-400" />}
                     </div>
                   </div>
-                  <div className="p-4 md:p-6 flex items-center justify-center bg-seer-indigo/5">
-                     <Check size={20} className="text-seer-indigo" />
+                  <div className="p-4 md:p-6 flex items-center justify-center bg-seer-accent/5">
+                     <Check size={20} className="text-seer-accent" />
                   </div>
                 </div>
               ))}

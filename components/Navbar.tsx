@@ -1,6 +1,6 @@
 
-import React, { useState } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -9,6 +9,23 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ isScrolled, openModal }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const btnRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    let rafId: number;
+    const tick = () => {
+      const data = (window as any).__seerWaveBtn || { intensity: 0, dirX: 0, dirY: 0 };
+      if (btnRef.current) {
+        const amt = Math.sin(data.intensity * Math.PI) * 5;
+        const tx = data.dirX * amt;
+        const ty = data.dirY * amt;
+        btnRef.current.style.transform = `translate(${tx}px, ${ty}px)`;
+      }
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
+  }, []);
 
   const navLinks = [
     { name: 'Problem', href: '#pain' },
@@ -28,7 +45,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, openModal }) => {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="#" className="flex items-center gap-1 group">
-          <span className="text-2xl font-serif tracking-wide text-seer-text group-hover:text-seer-indigo transition-colors">
+          <span className="text-2xl font-serif tracking-wide text-seer-text group-hover:text-seer-accent transition-colors">
             SEER
           </span>
           <span className="text-xs text-seer-muted ml-1.5 hidden sm:inline">by Seerlex</span>
@@ -46,11 +63,11 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, openModal }) => {
             </a>
           ))}
           <button
+            ref={btnRef}
             onClick={openModal}
-            className="flex items-center gap-2 bg-seer-indigo hover:bg-indigo-700 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors group"
+            className="bg-seer-accent hover:bg-[#C4684E] text-white px-5 py-2 rounded-lg text-base font-serif italic tracking-wide transition-colors"
           >
-            Request Access
-            <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+            Wanna Try !
           </button>
         </div>
 
@@ -81,7 +98,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, openModal }) => {
               setIsMobileMenuOpen(false);
               openModal();
             }}
-            className="flex items-center justify-center gap-2 bg-seer-indigo text-white px-4 py-3 rounded-lg font-semibold mt-2 w-full text-center"
+            className="flex items-center justify-center gap-2 bg-seer-accent text-white px-4 py-3 rounded-lg font-semibold mt-2 w-full text-center"
           >
             Request Access
           </button>

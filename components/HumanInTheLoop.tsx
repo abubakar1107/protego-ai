@@ -36,7 +36,7 @@ const HumanInTheLoop: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
           <div className="sticky top-32">
-            <h2 className="text-seer-indigo font-mono text-sm uppercase tracking-widest mb-4">Your Control</h2>
+            <h2 className="text-seer-accent font-mono text-sm uppercase tracking-widest mb-4">Your Control</h2>
             <h3 className="text-3xl md:text-5xl font-serif text-seer-text mb-6">
               Always in Control. Never Out of the Loop.
             </h3>
@@ -47,8 +47,8 @@ const HumanInTheLoop: React.FC = () => {
 
           <div className="grid gap-4">
             {features.map((item, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-indigo/30 transition-all flex items-start gap-4">
-                <div className="p-2.5 bg-seer-indigo/5 rounded-lg text-seer-indigo shrink-0">
+              <div key={i} className="bg-white p-6 rounded-xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-accent/30 transition-all flex items-start gap-4">
+                <div className="p-2.5 bg-seer-accent/5 rounded-lg text-seer-accent shrink-0">
                   {item.icon}
                 </div>
                 <div>

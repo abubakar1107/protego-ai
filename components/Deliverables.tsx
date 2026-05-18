@@ -24,7 +24,7 @@ const Deliverables: React.FC = () => {
     <section id="deliverables" className="px-6 py-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-seer-indigo font-mono text-sm uppercase tracking-widest mb-4">What You Get</h2>
+          <h2 className="text-seer-accent font-mono text-sm uppercase tracking-widest mb-4">What You Get</h2>
           <h3 className="text-3xl md:text-5xl font-serif text-seer-text mb-6">
             Court-Ready Documents, Jurisdiction-Specific
           </h3>
@@ -37,7 +37,7 @@ const Deliverables: React.FC = () => {
           {/* Plaintiff */}
           <div className="bg-white p-8 rounded-xl border border-seer-border shadow-sm">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-indigo-50 rounded-lg text-seer-indigo">
+              <div className="p-2 bg-orange-50 rounded-lg text-seer-accent">
                 <Shield size={20} />
               </div>
               <h4 className="text-lg font-semibold tracking-tight text-seer-text">Plaintiff Documents</h4>
@@ -45,7 +45,7 @@ const Deliverables: React.FC = () => {
             <ul className="space-y-3">
               {plaintiffDocs.map((doc, i) => (
                 <li key={i} className="flex items-center gap-3 text-seer-muted">
-                  <Check size={16} className="text-seer-indigo shrink-0" />
+                  <Check size={16} className="text-seer-accent shrink-0" />
                   <span>{doc}</span>
                 </li>
               ))}

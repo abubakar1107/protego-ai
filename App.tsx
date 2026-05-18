@@ -12,6 +12,7 @@ import Comparison from './components/Comparison';
 import HumanInTheLoop from './components/HumanInTheLoop';
 import Footer from './components/Footer';
 import WaitlistModal from './components/WaitlistModal';
+import FlowingSquares from './components/FlowingSquares';
 
 const App: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,10 +30,11 @@ const App: React.FC = () => {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <div className="min-h-screen bg-seer-bg text-seer-text font-sans selection:bg-seer-indigo/20 selection:text-seer-indigo overflow-x-hidden">
+    <div className="min-h-screen bg-seer-bg text-seer-text font-sans selection:bg-seer-accent/20 selection:text-seer-accent overflow-x-hidden">
+      <FlowingSquares />
       <Navbar isScrolled={isScrolled} openModal={openModal} />
 
-      <main className="relative flex flex-col pb-24">
+      <main className="relative z-10 flex flex-col pb-24">
         <Hero openModal={openModal} />
         <PainPoints />
         <CoreProcess />

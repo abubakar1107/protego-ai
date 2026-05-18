@@ -19,10 +19,10 @@ const Footer: React.FC<FooterProps> = ({ openModal }) => {
             Litigation preparation, battle-tested before the courtroom.
           </p>
           <div className="flex gap-4">
-             <a href="https://www.linkedin.com/in/absiddiq1/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-seer-border flex items-center justify-center text-seer-muted hover:bg-seer-indigo hover:text-white transition-colors">
+             <a href="https://www.linkedin.com/in/absiddiq1/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-seer-border flex items-center justify-center text-seer-muted hover:bg-seer-accent hover:text-white transition-colors">
                <Linkedin size={20} />
              </a>
-             <a href="mailto:abubakarsiddiqpalli99@gmail.com" className="w-10 h-10 rounded-full bg-seer-border flex items-center justify-center text-seer-muted hover:bg-seer-indigo hover:text-white transition-colors">
+             <a href="mailto:abubakarsiddiqpalli99@gmail.com" className="w-10 h-10 rounded-full bg-seer-border flex items-center justify-center text-seer-muted hover:bg-seer-accent hover:text-white transition-colors">
                <Mail size={20} />
              </a>
           </div>
@@ -32,7 +32,7 @@ const Footer: React.FC<FooterProps> = ({ openModal }) => {
           <p className="text-seer-muted text-sm">Interested in early access?</p>
           <button
             onClick={openModal}
-            className="flex items-center gap-2 bg-seer-indigo hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors group"
+            className="flex items-center gap-2 bg-seer-accent hover:bg-[#C4684E] text-white px-6 py-3 rounded-lg font-semibold transition-colors group"
           >
             Get in Touch
             <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />

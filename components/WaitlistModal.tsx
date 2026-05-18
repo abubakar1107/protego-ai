@@ -90,7 +90,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
             <p className="text-seer-muted text-lg leading-relaxed mb-8">
               Thank you for your interest in SEER. Your details have been received.
             </p>
-            <p className="text-seer-indigo font-mono text-sm tracking-widest uppercase">
+            <p className="text-seer-accent font-mono text-sm tracking-widest uppercase">
               We'll get back to you ASAP
             </p>
             <button
@@ -122,7 +122,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Harvey Specter"
-                  className="w-full bg-seer-surface border border-seer-border rounded-lg px-4 py-3 text-seer-text placeholder:text-seer-muted/40 focus:outline-none focus:border-seer-indigo/50 focus:ring-1 focus:ring-seer-indigo/20 transition-all disabled:opacity-50"
+                  className="w-full bg-seer-surface border border-seer-border rounded-lg px-4 py-3 text-seer-text placeholder:text-seer-muted/40 focus:outline-none focus:border-seer-accent/50 focus:ring-1 focus:ring-seer-accent/20 transition-all disabled:opacity-50"
                 />
               </div>
 
@@ -137,7 +137,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="harvey@pearson.com"
-                    className="w-full bg-seer-surface border border-seer-border rounded-lg px-4 py-3 text-seer-text placeholder:text-seer-muted/40 focus:outline-none focus:border-seer-indigo/50 focus:ring-1 focus:ring-seer-indigo/20 transition-all disabled:opacity-50"
+                    className="w-full bg-seer-surface border border-seer-border rounded-lg px-4 py-3 text-seer-text placeholder:text-seer-muted/40 focus:outline-none focus:border-seer-accent/50 focus:ring-1 focus:ring-seer-accent/20 transition-all disabled:opacity-50"
                   />
                 </div>
                 <div>
@@ -150,7 +150,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
                     value={formData.company}
                     onChange={handleChange}
                     placeholder="Pearson Hardman"
-                    className="w-full bg-seer-surface border border-seer-border rounded-lg px-4 py-3 text-seer-text placeholder:text-seer-muted/40 focus:outline-none focus:border-seer-indigo/50 focus:ring-1 focus:ring-seer-indigo/20 transition-all disabled:opacity-50"
+                    className="w-full bg-seer-surface border border-seer-border rounded-lg px-4 py-3 text-seer-text placeholder:text-seer-muted/40 focus:outline-none focus:border-seer-accent/50 focus:ring-1 focus:ring-seer-accent/20 transition-all disabled:opacity-50"
                   />
                 </div>
               </div>
@@ -165,7 +165,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
                   onChange={handleChange}
                   rows={3}
                   placeholder="Tell us about your practice area and case types."
-                  className="w-full bg-seer-surface border border-seer-border rounded-lg px-4 py-3 text-seer-text placeholder:text-seer-muted/40 focus:outline-none focus:border-seer-indigo/50 focus:ring-1 focus:ring-seer-indigo/20 transition-all resize-none disabled:opacity-50"
+                  className="w-full bg-seer-surface border border-seer-border rounded-lg px-4 py-3 text-seer-text placeholder:text-seer-muted/40 focus:outline-none focus:border-seer-accent/50 focus:ring-1 focus:ring-seer-accent/20 transition-all resize-none disabled:opacity-50"
                 />
               </div>
 
@@ -181,7 +181,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
               <button
                 type="submit"
                 disabled={status === 'submitting'}
-                className="w-full py-4 bg-seer-indigo hover:bg-indigo-700 text-white font-semibold tracking-wide rounded-lg transition-all flex items-center justify-center gap-2 group mt-2 disabled:bg-gray-300 disabled:cursor-not-allowed"
+                className="w-full py-4 bg-seer-accent hover:bg-[#C4684E] text-white font-semibold tracking-wide rounded-lg transition-all flex items-center justify-center gap-2 group mt-2 disabled:bg-gray-300 disabled:cursor-not-allowed"
               >
                 {status === 'submitting' ? (
                   <>

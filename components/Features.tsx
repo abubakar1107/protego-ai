@@ -6,16 +6,16 @@ const Features: React.FC = () => {
     <section id="features" className="px-6 py-24">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12">
-          <h2 className="text-seer-indigo font-mono text-sm uppercase tracking-widest mb-4">Platform</h2>
+          <h2 className="text-seer-accent font-mono text-sm uppercase tracking-widest mb-4">Platform</h2>
           <h3 className="text-3xl md:text-4xl font-serif text-seer-text">Built for Accuracy and Trust</h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
           {/* Feature 1: Adversarial Methodology */}
-          <div className="lg:col-span-2 bg-white p-8 rounded-2xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-indigo/30 transition-all">
+          <div className="lg:col-span-2 bg-white p-8 rounded-2xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-accent/30 transition-all">
             <div className="flex items-start justify-between mb-8">
-              <div className="p-3 bg-indigo-50 rounded-lg text-seer-indigo">
+              <div className="p-3 bg-orange-50 rounded-lg text-seer-accent">
                 <Swords size={24} />
               </div>
               <span className="text-xs font-mono text-seer-muted border border-seer-border px-2 py-1 rounded">METHODOLOGY</span>
@@ -27,9 +27,9 @@ const Features: React.FC = () => {
           </div>
 
           {/* Feature 2: Jurisdiction Tools */}
-          <div className="bg-white p-8 rounded-2xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-indigo/30 transition-all">
+          <div className="bg-white p-8 rounded-2xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-accent/30 transition-all">
             <div className="flex items-start justify-between mb-8">
-              <div className="p-3 bg-purple-50 rounded-lg text-purple-600">
+              <div className="p-3 bg-orange-100/50 rounded-lg text-orange-700">
                 <Landmark size={24} />
               </div>
               <span className="text-xs font-mono text-seer-muted border border-seer-border px-2 py-1 rounded">TOOLS</span>
@@ -41,9 +41,9 @@ const Features: React.FC = () => {
           </div>
 
            {/* Feature 3: Security */}
-           <div className="bg-white p-8 rounded-2xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-indigo/30 transition-all">
+           <div className="bg-white p-8 rounded-2xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-accent/30 transition-all">
             <div className="flex items-start justify-between mb-8">
-              <div className="p-3 bg-red-50 rounded-lg text-red-600">
+              <div className="p-3 bg-slate-100 rounded-lg text-slate-600">
                 <Lock size={24} />
               </div>
               <span className="text-xs font-mono text-seer-muted border border-seer-border px-2 py-1 rounded">SECURITY</span>
@@ -55,9 +55,9 @@ const Features: React.FC = () => {
           </div>
 
            {/* Feature 4: Dynamic Workflows */}
-           <div className="bg-white p-8 rounded-2xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-indigo/30 transition-all">
+           <div className="bg-white p-8 rounded-2xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-accent/30 transition-all">
             <div className="flex items-start justify-between mb-8">
-              <div className="p-3 bg-green-50 rounded-lg text-green-600">
+              <div className="p-3 bg-orange-50 rounded-lg text-orange-600">
                 <Route size={24} />
               </div>
               <span className="text-xs font-mono text-seer-muted border border-seer-border px-2 py-1 rounded">LOGIC</span>
@@ -69,9 +69,9 @@ const Features: React.FC = () => {
           </div>
 
            {/* Feature 5: Neutral Adjudication */}
-           <div className="bg-white p-8 rounded-2xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-indigo/30 transition-all">
+           <div className="bg-white p-8 rounded-2xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-accent/30 transition-all">
             <div className="flex items-start justify-between mb-8">
-              <div className="p-3 bg-amber-50 rounded-lg text-amber-600">
+              <div className="p-3 bg-amber-50 rounded-lg text-amber-700">
                 <Scale size={24} />
               </div>
               <span className="text-xs font-mono text-seer-muted border border-seer-border px-2 py-1 rounded">ADJUDICATION</span>
