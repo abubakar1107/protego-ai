@@ -76,11 +76,7 @@ const FlowingSquares: React.FC = () => {
       ctx.setTransform(window.devicePixelRatio || 1, 0, 0, window.devicePixelRatio || 1, 0, 0);
       ctx.clearRect(0, 0, w, h);
 
-      const scrollFade = Math.max(0, 1 - scrollRef.current / (h * 0.7));
-      if (scrollFade <= 0) {
-        animRef.current = requestAnimationFrame(draw);
-        return;
-      }
+      const scrollFade = Math.max(0.03, 1 - scrollRef.current / (h * 4));
 
       const cols = Math.ceil(w / gap) + 1;
       const rows = Math.ceil(h / gap) + 1;

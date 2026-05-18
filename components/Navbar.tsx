@@ -16,10 +16,14 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, openModal }) => {
     const tick = () => {
       const data = (window as any).__seerWaveBtn || { intensity: 0, dirX: 0, dirY: 0 };
       if (btnRef.current) {
-        const amt = Math.sin(data.intensity * Math.PI) * 5;
-        const tx = data.dirX * amt;
-        const ty = data.dirY * amt;
-        btnRef.current.style.transform = `translate(${tx}px, ${ty}px)`;
+        if (window.scrollY < window.innerHeight) {
+          const amt = Math.sin(data.intensity * Math.PI) * 5;
+          const tx = data.dirX * amt;
+          const ty = data.dirY * amt;
+          btnRef.current.style.transform = `translate(${tx}px, ${ty}px)`;
+        } else {
+          btnRef.current.style.transform = '';
+        }
       }
       rafId = requestAnimationFrame(tick);
     };
@@ -67,7 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, openModal }) => {
             onClick={openModal}
             className="bg-seer-accent hover:bg-[#C4684E] text-white px-5 py-2 rounded-lg text-base font-serif italic tracking-wide transition-colors"
           >
-            Wanna Try !
+            Try SEER
           </button>
         </div>
 
