@@ -41,7 +41,7 @@ const HumanInTheLoop: React.FC = () => {
               Always in Control. Never Out of the Loop.
             </h3>
             <p className="text-seer-muted text-lg leading-relaxed">
-              SEER runs autonomously, but you can intervene at any moment. Pause the workflow, provide feedback, redirect strategy — your input feeds directly into the process in real time.
+              SEER runs autonomously, but you can intervene at any moment. Pause the workflow, provide feedback, redirect strategy. Your input feeds directly into the process in real time.
             </p>
           </div>
 

@@ -12,7 +12,7 @@ const CoreProcess: React.FC = () => {
             Your Case, Start to Finish
           </h3>
           <p className="text-seer-muted max-w-3xl mx-auto text-lg leading-relaxed">
-            Select your role, describe your case, and SEER handles the rest — with you in command at every step.
+            Select your role, describe your case, and SEER handles the rest, with you in command at every step.
           </p>
         </div>
 

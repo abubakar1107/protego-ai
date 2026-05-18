@@ -20,10 +20,10 @@ const SimulationSection: React.FC = () => {
             Dynamic Courtroom Simulation
           </h3>
           <p className="text-seer-muted max-w-3xl mx-auto text-lg leading-relaxed mb-4">
-            Every substantive document is argued by two AI law firms before a neutral Judge — the same adversarial pressure your filings will face in court.
+            Every substantive document is argued by two AI law firms before a neutral Judge. The same adversarial pressure your filings will face in court.
           </p>
           <p className="text-seer-text max-w-2xl mx-auto text-base font-medium">
-            A single AI reviews your work in one pass. SEER deploys six specialists — each one trained to examine your case from a different angle.
+            A single AI reviews your work in one pass. SEER deploys six specialists, each one trained to examine your case from a different angle.
           </p>
         </div>
 
@@ -50,7 +50,7 @@ const SimulationSection: React.FC = () => {
               <h4 className="font-semibold tracking-tight text-seer-text text-lg">Public Rounds</h4>
             </div>
             <p className="text-seer-muted leading-relaxed">
-              Your documents face direct attack. Opposing counsel challenges every argument, citation, and factual claim — exposing the same weaknesses a real courtroom would.
+              Your documents face direct attack. Opposing counsel challenges every argument, citation, and factual claim, exposing the same weaknesses a real courtroom would.
             </p>
           </div>
           <div className="bg-white p-8 rounded-xl border border-seer-border shadow-sm">
@@ -59,7 +59,7 @@ const SimulationSection: React.FC = () => {
               <h4 className="font-semibold tracking-tight text-seer-text text-lg">Private Strategy Rounds</h4>
             </div>
             <p className="text-seer-muted leading-relaxed">
-              After each exchange, teams regroup behind closed doors — patching exposed weaknesses, identifying new angles of attack, and developing counter-strategies before the next round.
+              After each exchange, teams regroup behind closed doors, patching exposed weaknesses, identifying new angles of attack, and developing counter-strategies before the next round.
             </p>
           </div>
         </div>

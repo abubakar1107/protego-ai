@@ -17,7 +17,7 @@ const Hero: React.FC<HeroProps> = ({ openModal }) => {
         </h1>
 
         <p className="text-lg md:text-xl text-seer-muted max-w-2xl mb-12 leading-relaxed">
-          SEER drafts court-ready legal documents, then stress-tests them in a simulated courtroom — two opposing AI legal teams argue every angle before you file.
+          SEER drafts court-ready legal documents, then stress-tests them in a simulated courtroom. Two opposing AI legal teams argue every angle before you file.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">

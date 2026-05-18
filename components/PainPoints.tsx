@@ -32,7 +32,7 @@ const PainPoints: React.FC = () => {
               {
                 icon: <Gavel size={24} />,
                 title: "Settlement Value",
-                desc: "The settlement amount isn't decided in the courtroom — it's decided by the pre-trial paperwork quality."
+                desc: "The settlement amount isn't decided in the courtroom. It's decided by the pre-trial paperwork quality."
               }
             ].map((item, i) => (
               <div key={i} className="bg-white p-8 rounded-xl border border-seer-border shadow-sm hover:shadow-md hover:border-seer-accent/30 transition-all group">

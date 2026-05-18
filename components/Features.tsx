@@ -22,7 +22,7 @@ const Features: React.FC = () => {
             </div>
             <h3 className="text-lg font-semibold tracking-tight text-seer-text mb-3">Adversarial by Design</h3>
             <p className="text-seer-muted leading-relaxed">
-              Documents aren't just reviewed — they're attacked. Two opposing teams stress-test every argument across multiple rounds, so your filings have already survived the toughest scrutiny before they reach a courtroom.
+              Documents aren't just reviewed, they're attacked. Two opposing teams stress-test every argument across multiple rounds, so your filings have already survived the toughest scrutiny before they reach a courtroom.
             </p>
           </div>
 

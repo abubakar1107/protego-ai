@@ -102,7 +102,7 @@ const Deliverables: React.FC = () => {
         </p>
 
         <p className="text-center text-sm text-seer-muted mt-8">
-          Covering <span className="font-medium text-seer-text">New York, California, Texas, Illinois, Massachusetts & D.C.</span> — 23 federal courts and 40+ state courts.
+          Covering <span className="font-medium text-seer-text">New York, California, Texas, Illinois, Massachusetts & D.C.</span>, covering 23 federal courts and 40+ state courts.
         </p>
       </div>
     </section>
