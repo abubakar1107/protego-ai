@@ -102,9 +102,9 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, openModal }) => {
               setIsMobileMenuOpen(false);
               openModal();
             }}
-            className="flex items-center justify-center gap-2 bg-seer-accent text-white px-4 py-3 rounded-lg font-semibold mt-2 w-full text-center"
+            className="flex items-center justify-center gap-2 bg-seer-accent text-white px-4 py-3 rounded-lg font-serif italic text-lg mt-2 w-full text-center"
           >
-            Request Access
+            Try SEER
           </button>
         </div>
       )}
