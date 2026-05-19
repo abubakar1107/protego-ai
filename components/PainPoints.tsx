@@ -40,7 +40,7 @@ const PainPoints: React.FC = () => {
                   {item.icon}
                 </div>
                 <div>
-                  <h4 className="text-base font-semibold tracking-tight text-seer-text mb-1">{item.title}</h4>
+                  <h4 className="text-xl font-serif text-seer-text mb-1 leading-tight">{item.title}</h4>
                   <p className="text-sm text-seer-muted leading-relaxed">
                     {item.desc}
                   </p>
