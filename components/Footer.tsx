@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, Mail, ArrowRight } from 'lucide-react';
+import { Mail, ArrowRight } from 'lucide-react';
 
 interface FooterProps {
   openModal: () => void;
@@ -19,9 +19,6 @@ const Footer: React.FC<FooterProps> = ({ openModal }) => {
             Litigation preparation, battle-tested before the courtroom.
           </p>
           <div className="flex gap-4">
-             <a href="https://www.linkedin.com/in/absiddiq1/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-seer-border flex items-center justify-center text-seer-muted hover:bg-seer-accent hover:text-white transition-colors">
-               <Linkedin size={20} />
-             </a>
              <a href="mailto:abubakarsiddiqpalli99@gmail.com" className="w-10 h-10 rounded-full bg-seer-border flex items-center justify-center text-seer-muted hover:bg-seer-accent hover:text-white transition-colors">
                <Mail size={20} />
              </a>
