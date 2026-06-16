@@ -7,15 +7,18 @@ const Comparison: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 lg:gap-8">
 
-          <div className="lg:col-span-2 pr-0 lg:pr-12 mb-12 lg:mb-0">
-            <h2 className="text-seer-accent font-mono text-sm uppercase tracking-widest mb-4">Why Us</h2>
-            <h3 className="text-3xl md:text-4xl font-serif text-seer-text mb-6">
+          <div className="lg:col-span-2 pr-0 lg:pr-12 mb-12 lg:mb-0 lg:sticky lg:top-32 self-start">
+            <div className="flex items-center gap-3 mb-5">
+              <span className="h-px w-8 bg-seer-accent"></span>
+              <span className="text-seer-accent font-mono text-xs uppercase tracking-[0.2em]">Why Us</span>
+            </div>
+            <h3 className="text-4xl md:text-5xl font-serif text-seer-text leading-[1.1] mb-6">
               Everyone else generates. We simulate.
             </h3>
-            <p className="text-seer-muted mb-6">
+            <p className="text-seer-muted text-lg leading-relaxed mb-5">
               Tools like Harvey, EvenUp, and LegalMation focus on document generation alone.
             </p>
-            <p className="text-seer-text font-medium">
+            <p className="text-seer-text font-serif text-xl italic">
               SEER accounts for the adversarial nature of law.
             </p>
           </div>
