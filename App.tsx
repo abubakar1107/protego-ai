@@ -38,12 +38,12 @@ const App: React.FC = () => {
         <Hero openModal={openModal} />
         <PainPoints />
         <CoreProcess />
-        <SimulationSection />
-        <Deliverables />
-        <MarketStats />
         <SystemFeatures />
-        <Comparison />
+        <SimulationSection />
         <HumanInTheLoop />
+        <Deliverables />
+        <Comparison />
+        <MarketStats />
       </main>
 
       <Footer openModal={openModal} />

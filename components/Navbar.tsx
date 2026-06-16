@@ -47,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, openModal }) => {
           : 'bg-transparent border-transparent py-6'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
         <a href="#" className="flex items-center gap-1 group">
           <span className="text-2xl font-serif tracking-wide text-seer-text group-hover:text-seer-accent transition-colors">
             SEER

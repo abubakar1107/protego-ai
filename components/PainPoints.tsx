@@ -22,7 +22,7 @@ const PainPoints: React.FC = () => {
 
   return (
     <section id="pain" className="px-6 py-28 bg-seer-surface">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
           <div className="lg:sticky lg:top-32">

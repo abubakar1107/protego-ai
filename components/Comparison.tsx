@@ -4,7 +4,7 @@ import { Check, X } from 'lucide-react';
 const Comparison: React.FC = () => {
   return (
     <section id="comparison" className="px-6 py-24 bg-seer-surface">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 lg:gap-8">
 
           <div className="lg:col-span-2 pr-0 lg:pr-12 mb-12 lg:mb-0 lg:sticky lg:top-32 self-start">
@@ -46,6 +46,7 @@ const Comparison: React.FC = () => {
                 { label: "Loophole Detection", comp: false, us: true },
                 { label: "Strategy Stress-Testing", comp: false, us: true },
                 { label: "Human-in-the-Loop Control", comp: false, us: true },
+                { label: "Full Traceability & Audit Trail", comp: false, us: true },
               ].map((row, i) => (
                 <div key={i} className="grid grid-cols-2 border-b border-seer-border last:border-0 hover:bg-seer-surface/50 transition-colors">
                   <div className="p-4 md:p-6 border-r border-seer-border flex items-center justify-between">
@@ -58,7 +59,7 @@ const Comparison: React.FC = () => {
                     </div>
                   </div>
                   <div className="p-4 md:p-6 flex items-center justify-center bg-seer-accent/5">
-                     <Check size={20} className="text-seer-accent" />
+                     <Check size={20} className="text-green-600" />
                   </div>
                 </div>
               ))}

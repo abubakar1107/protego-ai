@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ openModal }) => {
         {/* Stats strip */}
         <div className="mt-20 pt-8 border-t border-seer-border grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 w-full max-w-4xl">
           {[
-            { label: 'Agents and counting', value: '6+' },
+            { label: 'Specialized Agents', value: '7+' },
             { label: 'Federal Courts', value: '23+' },
             { label: 'State Courts', value: '40+' },
             { label: 'Document Types and growing', value: '12+' },

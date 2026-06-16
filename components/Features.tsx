@@ -36,8 +36,8 @@ const Features: React.FC = () => {
   ];
 
   return (
-    <section id="features" className="px-6 py-28">
-      <div className="max-w-7xl mx-auto">
+    <section id="features" className="px-6 py-28 bg-seer-surface">
+      <div className="max-w-5xl mx-auto">
         <div className="max-w-2xl mb-16">
           <div className="flex items-center gap-3 mb-5">
             <span className="h-px w-8 bg-seer-accent"></span>

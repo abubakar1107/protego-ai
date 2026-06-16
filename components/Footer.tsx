@@ -8,7 +8,7 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ openModal }) => {
   return (
     <footer id="contact" className="bg-seer-surface border-t border-seer-border pt-20 pb-10 px-6">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
 
         <div className="max-w-sm">
           <div className="flex items-center gap-2 mb-6">
@@ -41,7 +41,7 @@ const Footer: React.FC<FooterProps> = ({ openModal }) => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto pt-8 border-t border-seer-border text-center md:text-left flex flex-col md:flex-row justify-between items-center text-xs text-seer-muted">
+      <div className="max-w-5xl mx-auto pt-8 border-t border-seer-border text-center md:text-left flex flex-col md:flex-row justify-between items-center text-xs text-seer-muted">
         <p>&copy; {new Date().getFullYear()} Seerlex. All rights reserved.</p>
         <p>Designed for Litigators.</p>
       </div>

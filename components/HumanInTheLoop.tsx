@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pause, MessageCircleQuestion, ClipboardCheck, Paperclip, SkipForward } from 'lucide-react';
+import { Pause, MessageCircleQuestion, ClipboardCheck, Paperclip, SkipForward, FileClock } from 'lucide-react';
 
 const HumanInTheLoop: React.FC = () => {
   const features = [
@@ -31,8 +31,8 @@ const HumanInTheLoop: React.FC = () => {
   ];
 
   return (
-    <section id="control" className="px-6 py-28">
-      <div className="max-w-7xl mx-auto">
+    <section id="control" className="px-6 py-28 bg-seer-surface">
+      <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
           <div className="lg:sticky lg:top-32">
@@ -41,10 +41,10 @@ const HumanInTheLoop: React.FC = () => {
               <span className="text-seer-accent font-mono text-xs uppercase tracking-[0.2em]">Your Control</span>
             </div>
             <h3 className="text-4xl md:text-5xl font-serif text-seer-text leading-[1.1] mb-6">
-              Always in control. Never out of the loop.
+              A true human in the loop.
             </h3>
             <p className="text-seer-muted text-lg leading-relaxed">
-              SEER runs autonomously, but you can intervene at any moment. Pause the workflow, provide feedback, redirect strategy. Your input feeds directly into the process in real time.
+              SEER runs autonomously, but you hold the reins. Step in at any moment, at any stage, and give feedback in your own words. It flows directly into the work, and every move is recorded, so nothing happens that you can't see, review, or trace.
             </p>
           </div>
 
@@ -63,6 +63,19 @@ const HumanInTheLoop: React.FC = () => {
                 </span>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Traceability callout */}
+        <div className="mt-16 border border-seer-accent/25 bg-seer-accent/[0.04] rounded-2xl p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-6">
+          <span className="text-seer-accent shrink-0">
+            <FileClock size={32} strokeWidth={1.5} />
+          </span>
+          <div className="flex-1">
+            <h4 className="font-serif text-2xl text-seer-text mb-2">Every step, fully traceable.</h4>
+            <p className="text-seer-muted leading-relaxed max-w-3xl">
+              Every agent action, every human intervention, and every decision is captured in a complete audit trail. You always know exactly what happened, when, and why. Defensible by design.
+            </p>
           </div>
         </div>
       </div>
